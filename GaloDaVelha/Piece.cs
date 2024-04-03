@@ -61,18 +61,70 @@ public class Piece
     }
 
     /// <summary>
-    /// Checa se as peças tem caracteristicas em comum, se tiver pelo menos uma
-    /// igual, retorna True
+    /// Caractere Unicode para representar cada uma das combinações possiveis
+    /// das peças
     /// </summary>
-    /// <param name="outra"></param>
     /// <returns></returns>
-    public bool Igual(Piece outra)
+    public override string ToString()
     {
-        return tamanho == outra.GetTamanho() ||
-               cor == outra.GetCor() ||
-               forma == outra.GetForma() ||
-               furo == outra.GetFuro();
-    }
+        string unicodeChar;
 
+        switch ((tamanho, cor, forma, furo))
+        {
+            case (Tamanho.Grande, Cor.Clara, Forma.Redonda, Furo.Com):
+                unicodeChar = "\u25CF"; // ●
+                break;
+            case (Tamanho.Grande, Cor.Clara, Forma.Redonda, Furo.Sem):
+                unicodeChar = "\u25CC"; // ◌
+                break;
+            case (Tamanho.Grande, Cor.Clara, Forma.Quadrada, Furo.Com):
+                unicodeChar = "\u25A1"; // □
+                break;
+            case (Tamanho.Grande, Cor.Clara, Forma.Quadrada, Furo.Sem):
+                unicodeChar = "\u25A2"; // ▢
+                break;
+            case (Tamanho.Grande, Cor.Escura, Forma.Redonda, Furo.Com):
+                unicodeChar = "\u25D9"; // ◙
+                break;
+            case (Tamanho.Grande, Cor.Escura, Forma.Redonda, Furo.Sem):
+                unicodeChar = "\u25D8"; // ◘
+                break;
+            case (Tamanho.Grande, Cor.Escura, Forma.Quadrada, Furo.Com):
+                unicodeChar = "\u25FC"; // ◼
+                break;
+            case (Tamanho.Grande, Cor.Escura, Forma.Quadrada, Furo.Sem):
+                unicodeChar ="\u25A7"; // ▧
+                break;
+            case (Tamanho.Pequena, Cor.Clara, Forma.Redonda, Furo.Com):
+                unicodeChar = "\u25C9"; // ◉
+                break;
+            case (Tamanho.Pequena, Cor.Clara, Forma.Redonda, Furo.Sem):
+                unicodeChar = "\u25CE"; // ◎
+                break;
+            case (Tamanho.Pequena, Cor.Clara, Forma.Quadrada, Furo.Com):
+                unicodeChar = "\u25AB"; // ▫
+                break;
+            case (Tamanho.Pequena, Cor.Clara, Forma.Quadrada, Furo.Sem):
+                unicodeChar = "\u25AF"; // ▯
+                break;
+            case (Tamanho.Pequena, Cor.Escura, Forma.Redonda, Furo.Com):
+                unicodeChar = "\u25C7"; // ◇
+                break;
+            case (Tamanho.Pequena, Cor.Escura, Forma.Redonda, Furo.Sem):
+                unicodeChar = "\u25C8"; // ◈
+                break;
+            case (Tamanho.Pequena, Cor.Escura, Forma.Quadrada, Furo.Com):
+                unicodeChar = "\u25A3"; // ▣
+                break;
+            case (Tamanho.Pequena, Cor.Escura, Forma.Quadrada, Furo.Sem):
+                unicodeChar = "\u25A2"; // ▢
+                break;
+            default:
+                unicodeChar = " ";
+                break;
+        }
+
+        return unicodeChar;
+    }   
 
 }

@@ -61,6 +61,21 @@ public class Piece
     }
 
     /// <summary>
+    /// Checa se as peças tem caracteristicas em comum, se tiver pelo menos uma
+    /// igual, retorna True
+    /// </summary>
+    /// <param name="outra"></param>
+    /// <returns></returns>
+    public bool Igual(Piece outra)
+    {
+        return tamanho == outra.GetTamanho() ||
+               cor == outra.GetCor() ||
+               forma == outra.GetForma() ||
+               furo == outra.GetFuro();
+    }
+
+
+    /// <summary>
     /// Caractere Unicode para representar cada uma das combinações possiveis
     /// das peças
     /// </summary>

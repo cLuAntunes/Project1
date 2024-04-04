@@ -32,7 +32,6 @@ public class Board
 
         return false;
     }
-}
 
     /// <summary>
     /// Verifica se as peças tem alguma semelhança
@@ -65,3 +64,40 @@ public class Board
         return VerIgual(tabuleiro[0, 0], tabuleiro[1, 1], tabuleiro[2, 2], tabuleiro[3, 3]) ||
                VerIgual(tabuleiro[0, 3], tabuleiro[1, 2], tabuleiro[2, 1], tabuleiro[3, 0]);
     }
+
+    /// <summary>
+    /// Verifica se o jogador ganhou
+    /// </summary>
+    /// <returns></returns>
+    public bool Vitoria()
+    {
+        for (int i = 0; i < TamanhoTab; i++)
+        {
+            if (VerLinha(i) || VerColuna(i))
+                return true;
+        }
+
+        return VerDiagonais();
+    }
+
+    /// <summary>
+    /// Mostra o Tabuleiro no console
+    /// </summary>
+    public void Exibir()
+    {
+        Console.WriteLine("   0  1  2  3");
+        for (int i = 0; i < TamanhoTab; i++)
+        {
+            Console.Write(i + " ");
+            for (int j = 0; j < TamanhoTab; j++)
+            {
+                Console.Write("|");
+                if (tabuleiro[i, j] != null)
+                    Console.Write(tabuleiro[i, j].ToString());
+                else
+                    Console.Write("   ");
+            }
+            Console.WriteLine("|");
+        }
+    }
+}

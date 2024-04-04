@@ -21,6 +21,9 @@ namespace GaloDaVelha
             Console.Write("Nome do Jogador 2: ");
             string nomePlayer2 = Console.ReadLine();
             Player player2 = new Player(nomePlayer2);
+
+            Game game = new Game(player1, player2);
+            game.Play();
         }
     }
 }

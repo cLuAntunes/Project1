@@ -6,6 +6,11 @@ public class Game
     private Player[] players;
     private int playerAtual;
 
+    /// <summary>
+    /// Construtor da classe Game.
+    /// </summary>
+    /// <param name="player1">Primeiro jogador.</param>
+    /// <param name="player2">Segundo jogador.</param>
     public Game(Player player1, Player player2)
     {
         board = new Board();
@@ -13,6 +18,9 @@ public class Game
         playerAtual = 0;
     }
 
+    /// <summary>
+    /// Método que inicia o jogo.
+    /// </summary>
     public void Play()
     {
         bool jogoAtivo = true;

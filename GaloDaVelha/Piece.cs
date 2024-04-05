@@ -1,5 +1,5 @@
 /// <summary>
-/// Enumerações com as caracteristicas das peças
+/// Enumerações com as caracteristicas das peças.
 /// </summary>
 public enum Tamanho
 {
@@ -32,6 +32,13 @@ public class Piece
     private Forma forma;
     private Furo furo;
 
+    /// <summary>
+    /// Construtor da classe Piece.
+    /// </summary>
+    /// <param name="size">Tamanho da peça.</param>
+    /// <param name="color">Cor da peça.</param>
+    /// <param name="form">Forma da peça.</param>
+    /// <param name="hole">Se há ou não furo na peça.</param>
     public Piece(Tamanho size, Cor color, Forma form, Furo hole)
     {
         tamanho = size;
@@ -40,21 +47,37 @@ public class Piece
         furo = hole;
     }
 
+    /// <summary>
+    /// Obtem o tamanho da peça.
+    /// </summary>
+    /// <returns></returns>
     public Tamanho GetTamanho()
     {
         return tamanho;
     }
 
+    /// <summary>
+    /// Obtem a cor da peça.
+    /// </summary>
+    /// <returns></returns>
     public Cor GetCor()
     {
         return cor;
     }
 
+    /// <summary>
+    /// Obtém a forma da peça.
+    /// </summary>
+    /// <returns></returns>
     public Forma GetForma()
     {
         return forma;
     }
 
+    /// <summary>
+    /// Obtem se há ou não furo na peça.
+    /// </summary>
+    /// <returns></returns>
     public Furo GetFuro()
     {
         return furo;
@@ -62,7 +85,7 @@ public class Piece
 
     /// <summary>
     /// Checa se as peças tem caracteristicas em comum, se tiver pelo menos uma
-    /// igual, retorna True
+    /// igual, retorna True.
     /// </summary>
     /// <param name="outra"></param>
     /// <returns></returns>
@@ -77,9 +100,9 @@ public class Piece
 
     /// <summary>
     /// Caractere Unicode para representar cada uma das combinações possiveis
-    /// das peças
+    /// das peças.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Caractere Unicode que representa a peça.</returns>
     public override string ToString()
     {
         string unicodeChar;

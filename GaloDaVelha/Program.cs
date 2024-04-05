@@ -1,9 +1,13 @@
 ﻿using System;
 
 namespace GaloDaVelha
-{
+{   
     class Program
-    {
+    {   
+        /// <summary>
+        /// Método principal do programa.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.WriteLine("Bem-vindo ao GaloDaVelha!");

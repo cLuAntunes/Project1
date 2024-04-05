@@ -2,6 +2,10 @@ public class Player
 {
     private string nome;
 
+    /// <summary>
+    /// Construtor da classe Player.
+    /// </summary>
+    /// <param name="nomePlayer">Nome do jogador.</param>
     public Player(string nomePlayer)
     {
         nome = nomePlayer; 

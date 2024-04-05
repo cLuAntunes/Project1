@@ -5,6 +5,9 @@ public class Board
     private Piece[,] tabuleiro;
     private const int TamanhoTab = 4;
 
+    /// <summary>
+    /// Construtor da classe Board.
+    /// </summary>
     public Board()
     {
         tabuleiro = new Piece[TamanhoTab, TamanhoTab];
@@ -12,13 +15,13 @@ public class Board
 
 
     /// <summary>
-    /// Permite colocar uma peça no tabuleiro verificando se a posição está 
-    /// ocupada ou não
+    /// Permite colocar uma peça no tabuleiro, verificando se a posição está 
+    /// ocupada ou não.
     /// </summary>
-    /// <param name="linha"></param>
-    /// <param name="coluna"></param>
-    /// <param name="peça"></param>
-    /// <returns></returns>
+    /// <param name="linha">Linha que vai ser colocada a peça.</param>
+    /// <param name="coluna">Coluna que vai ser colocada a peça.</param>
+    /// <param name="peça">Peça que vai ser posta no tabuleiro.</param>
+    /// <returns>Retorna true se a peça for colocada, se não retorna false.</returns>
     public bool ColocarPeça(int linha, int coluna, Piece peça)
     {
         if (linha < 0 || linha >= TamanhoTab || coluna < 0 || coluna >= TamanhoTab)
@@ -34,7 +37,7 @@ public class Board
     }
 
     /// <summary>
-    /// Verifica se as peças tem alguma semelhança
+    /// Verifica se as peças tem alguma semelhança.
     /// </summary>
     /// <param name="p1"></param>
     /// <param name="p2"></param>
@@ -49,16 +52,30 @@ public class Board
         return p1.Igual(p2) && p1.Igual(p3) && p1.Igual(p4);
     }
 
+    /// <summary>
+    /// Verifica se as peças em uma linha são iguais.
+    /// </summary>
+    /// <param name="linha">Linha verificada.</param>
+    /// <returns></returns>
     private bool VerLinha(int linha)
     {
         return VerIgual(tabuleiro[linha, 0], tabuleiro[linha, 1], tabuleiro[linha, 2], tabuleiro[linha, 3]);
     }
 
+    /// <summary>
+    /// Verifica se as peças em uma coluna são iguais.
+    /// </summary>
+    /// <param name="coluna">Coluna verificada.</param>
+    /// <returns></returns>
     private bool VerColuna(int coluna)
     {
         return VerIgual(tabuleiro[0, coluna], tabuleiro[1, coluna], tabuleiro[2, coluna], tabuleiro[3, coluna]);
     }
 
+    /// <summary>
+    /// Verifica se as peças na diagonal são iguais.
+    /// </summary>
+    /// <returns></returns>
     private bool VerDiagonais()
     {
         return VerIgual(tabuleiro[0, 0], tabuleiro[1, 1], tabuleiro[2, 2], tabuleiro[3, 3]) ||
@@ -66,7 +83,7 @@ public class Board
     }
 
     /// <summary>
-    /// Verifica se o jogador ganhou
+    /// Verifica se o jogador ganhou.
     /// </summary>
     /// <returns></returns>
     public bool Vitoria()

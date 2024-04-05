@@ -36,6 +36,7 @@ public class Game
             Console.WriteLine("\nTamanho(Grande ou Pequena), cor(Clara ou Escura), forma(Redonda ou Quadrada) e furo(Com ou Sem): ");
             var pieceAdv = Console.ReadLine().Trim().Split(',');
 
+            //Código sugerido pelo ChatGTP para o parsing das peças
             Tamanho tamanhoAdv = (Tamanho)Enum.Parse(typeof(Tamanho), pieceAdv[0]);
             Cor corAdv = (Cor)Enum.Parse(typeof(Cor), pieceAdv[1]);
             Forma formaAdv = (Forma)Enum.Parse(typeof(Forma), pieceAdv[2]);

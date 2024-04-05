@@ -97,6 +97,7 @@ public class Board
         return VerDiagonais();
     }
 
+    //Utilizamos o ChatGTP para fazer este método 
     /// <summary>
     /// Mostra o Tabuleiro no console
     /// </summary>
